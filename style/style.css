@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
+/*Configuracion inicial*/
 :root {
   --color-fondo: #F3F3E0;         /* Fondo claro, elegante y suave */
   --color-primario: #27548A;      /* Azul fuerte para elementos destacados */
@@ -31,19 +32,50 @@ body, html{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
 }
 
-.titulo-destaque {
-    color: var(--color-acento);
+/*Encabezado*/
+header{
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    height: 70px;
+    padding: 0px 20px;
 }
 
+.header_nav{
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 70px;
+}
+
+.header_menu_link{
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+
+.header_menu_link:hover{
+    border-radius: 10px;
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+}
+
+/*Cuerpo*/
 .presentacion {
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 2000px;
     width: 100%;
+    height: 100%;
     gap: 150px;
     overflow-x: hidden;
     flex-wrap: wrap;
@@ -61,13 +93,19 @@ body, html{
     font-family: 'Krona One', sans-serif;
 }
 
+.titulo-destaque {
+    color: var(--color-acento);
+}
+
 .presentacion__contenido__texto{
     font-size: 24px;
+    text-align: justify;
     font-family: 'Montserrat', sans-serif;
 }
 
 .presentacion__enlaces{
     display: flex;
+    width: 100%;
     align-items: center;
     flex-direction: column;
     gap: 32px;
@@ -78,8 +116,16 @@ body, html{
     font-size: 24px;
 }
 
+.presentacion_enlaces_botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .presentacion__enlaces__link{
-    width: 378px;
+    width: 190px;
     text-align: center;
     border-radius: 8px;
     font-size: 24px;
@@ -122,8 +168,14 @@ body, html{
     background-color: var(--color-primario);
 }
 
+.img_completa{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
 .img_borde{
-    max-width: 600px;
+    max-width: 550px;
     width: 100%;
     height: auto;
     display: block;
@@ -142,10 +194,11 @@ body, html{
     transform: translateX(-20px) translateY(20px); /* Cancelamos el movimiento visual */
 }
 
+/*Pie de pagina*/
 footer{
     background-color: var(--color-secundario);
     color: var(--color-fondo);
-    height: 100px;
+    height: 50px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
