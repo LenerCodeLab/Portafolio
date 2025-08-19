@@ -74,19 +74,21 @@ header{
 
 /*Cuerpo*/
 .presentacion {
+    padding: 0 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 2000px;
     width: 100%;
-    height: 100%;
-    gap: 150px;
+    height: auto;
+    gap: 100px;
     overflow-x: hidden;
     flex-wrap: wrap;
 }
 
 .presentacion__contenido{
-    width: 615px;
+    width: 40%;
+    flex-grow: 2;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -111,6 +113,12 @@ header{
     text-decoration: none;
     font-weight: 1000;
     color: var(--color-primario);
+}
+
+.presentacion__contenido__texto_resaltado{
+    background-color: var(--color-acento);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
 }
 
 .presentacion__enlaces{
@@ -179,7 +187,10 @@ header{
 }
 
 .img_completa{
-    height: 100%;
+    flex-grow: 1;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -189,18 +200,17 @@ header{
 }
 
 .img_borde{
-    max-width: 550px;
-    width: 100%;
+    width: 90%;
     height: auto;
     display: block;
     border-radius: 15px;
     border: 5px solid var(--color-secundario);
+    margin-top: 2rem;
     padding: 0px;
     transform: translateX(20px) translateY(-20px); /* Mueve el borde hacia la derecha */
 }
 
 .img_borde img{
-    max-width: 600px;
     width: 100%;
     height: auto;
     display: block;
@@ -230,6 +240,21 @@ header{
     font-weight: 600;
 }
 
+.habilidades__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.habilidades__grid img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
 /*Pie de pagina*/
 footer{
     background-color: var(--color-secundario);
@@ -247,4 +272,29 @@ footer{
 footer a{
     text-decoration: none;
     color: var(--color-acento);
+}
+
+@media (max-width: 1370px){
+    .presentacion{
+        flex-direction: column-reverse;
+        overflow-x: visible;
+        flex-wrap: nowrap;
+        gap: 50px;
+    }
+    .presentacion__contenido{
+        width: 90%;
+    }
+    .presentacion__contenido__titulo{
+        text-align: center;
+    }
+    .img_completa{
+        max-width: 500px;
+        align-self: center;
+    }
+    .img_boton:hover{
+    max-width: 40rem;
+    max-height: 10rem;
+    padding: 0.7rem 2rem;
+    font-weight: 500;
+    }
 }
